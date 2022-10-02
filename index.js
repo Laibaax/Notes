@@ -1,8 +1,10 @@
+document.addEventListener("DOMContentLoaded", function() {
 const button = document.getElementById("add");
 button.addEventListener("click", handleClick);
 
 const input = document.getElementById("text");
 input.addEventListener("keydown", handleKeyDown);
+});
 
 function handleClick(/* event */) {
     add();
