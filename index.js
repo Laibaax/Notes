@@ -18,11 +18,18 @@ function add() {
     const note = input.value;
 }
 
+function handleClickLIItem(event) {
+    const list = document.getElementById("list");
+    list.removeChild(event.target);
+
+}
+
   if (note) {
     const list = document.getElementById("list");
     const item = document.createElement("li");
     item.textContent = note;
+    item.addEventListener("click", handleClickLIItem);
     list.appendChild(item);
     input.value = ""; //reset input
-    input.focus();  //focus  
+    input.focus(); 
   }
