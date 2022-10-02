@@ -1,3 +1,13 @@
+const notes = [
+
+];
+
+function buildLIItem(note) {
+    const item = document.createElement("li");
+    item.textContent = note;
+    item.addEventListener("click", handleClickLIItem);
+    return item;
+}
 document.addEventListener("DOMContentLoaded", function() {
 const button = document.getElementById("add");
 button.addEventListener("click", handleClick);
@@ -28,10 +38,9 @@ function handleClickLIItem(event) {
 
   if (note) {
     const list = document.getElementById("list");
-    const item = document.createElement("li");
-    item.textContent = note;
-    item.addEventListener("click", handleClickLIItem);
+    const item = buildLIItem(note);
     list.appendChild(item);
+    notes.push(note);
     input.value = ""; //reset input
     input.focus(); 
   }
